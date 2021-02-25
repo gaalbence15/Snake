@@ -24,7 +24,20 @@ fej.shape("triangle")
 fej.penup()
 fej.color("yellow")
 
+gameover = turtle.Turtle()
+gameover.color("yellow")
+gameover.hideturtle()
+gameover.penup()
+
 while True:
     fej.forward(20)
     palya.update()
-    time.sleep(0.3)
+    time.sleep(0.2)
+
+    if fej.ycor() > 300 or fej.ycor() < -300:
+        gameover.write("Game Over!", font=("Arial", 20, "bold"), align="center")
+        fej.clear()
+
+    if fej.xcor() > 400 or fej.xcor() < -400:
+        gameover.write("Game Over!", font=("Arial", 20, "bold"), align="center")
+        fej.clear()
